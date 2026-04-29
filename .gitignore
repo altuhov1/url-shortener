@@ -1,0 +1,23 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# .env <- в проде должен быть без коммита
+*.test
+
+*.out
+coverage.*
+*.coverprofile
+profile.cov
+
+vendor/
+
+
+# Editor/IDE
+.idea/
+.vscode/
+
+.DS_Store

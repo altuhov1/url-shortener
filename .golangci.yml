@@ -1,0 +1,44 @@
+version: "2"
+
+run:
+  timeout: 3m
+  tests: true
+
+linters:
+  default: none
+  enable:
+    - errcheck
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - misspell
+    - revive
+    - gocritic
+    - bodyclose
+    - errorlint
+    - unconvert
+    - unparam
+    - whitespace
+  settings:
+    revive:
+      rules:
+        - name: var-naming
+          disabled: true
+        - name: exported
+          disabled: true
+        - name: package-comments
+          disabled: true
+    errcheck:
+      check-type-assertions: true
+  exclusions:
+    rules:
+      - path: _test\.go
+        linters:
+          - errcheck
+          - unparam
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
